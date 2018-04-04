@@ -1,0 +1,22 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    title:
+        label: chiragpatel.photoswipe::lang.galleries.title
+        searchable: true
+        sortable: true
+    is_published:
+        label: chiragpatel.photoswipe::lang.galleries.is_published
+        type: switch
+        sortable: true
+        searchable: true
+    published_at:
+        label: chiragpatel.photoswipe::lang.galleries.published_at
+        searchable: true
+        sortable: true
+    updated_at:
+        label: chiragpatel.photoswipe::lang.galleries.updated_at
+        searchable: true
+        sortable: true

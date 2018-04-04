@@ -1,0 +1,16 @@
+<div id="photo-swipe-album" class="photo-swipe-album">
+    {% for album in albums %}
+    <div class="responsive-album">
+        <div class="album">
+            <a href="{{ album.url}}" class="album-link">
+                {% if album.cover %}
+                <img src="{{ album.cover.getThumb(400,250,'crop') }}" alt="Album Image" height="100">
+                {% else %}
+                <img src="{{ album.images[0].getThumb(400,250,'crop') }}" alt="Album Image" height="100">
+                {% endif %}
+                <div class="title">{{ album.title }}</div>
+            </a>
+        </div>
+    </div>
+    {% endfor %}
+</div>

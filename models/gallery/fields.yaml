@@ -1,0 +1,53 @@
+fields:
+    title:
+        label: 'chiragpatel.photoswipe::lang.galleries.title'
+        span: left
+        type: text
+    slug:
+        label: 'chiragpatel.photoswipe::lang.galleries.slug'
+        span: right
+        preset:
+            field: title
+            type: slug
+        type: text
+    is_published:
+        label: 'chiragpatel.photoswipe::lang.galleries.is_published'
+        span: left
+        type: checkbox
+    published_at:
+        label: 'chiragpatel.photoswipe::lang.galleries.published_at'
+        span: left
+        type: datepicker
+        mode: datetime
+        trigger:
+            action: enable
+            field: is_published
+            condition: checked
+tabs:
+    fields:
+        images:
+            label: 'chiragpatel.photoswipe::lang.galleries.images'
+            mode: image
+            imageWidth: '250'
+            imageHeight: '250'
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: auto
+            type: fileupload
+            tab: 'chiragpatel.photoswipe::lang.galleries.images'
+        cover:
+            label: 'chiragpatel.photoswipe::lang.galleries.cover'
+            mode: image
+            imageWidth: '500'
+            imageHeight: '350'
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: auto
+            type: fileupload
+            tab: 'chiragpatel.photoswipe::lang.galleries.album_tab'
+
+

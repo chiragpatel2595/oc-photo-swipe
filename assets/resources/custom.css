@@ -1,0 +1,157 @@
+.photo-swipe-album {
+    margin: 5px;
+    width: 99%;
+    display: inline-block;
+}
+
+.photo-swipe-images{
+    display: inline-block;
+}
+
+div.album {
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    margin-bottom: 10px;
+}
+
+div.album:hover {
+    border: 1px solid #777;
+}
+
+div.album img {
+    width: 100%;
+    height: auto;
+}
+
+.album .album-link .title {
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.album .album-link:hover, .album .title:hover{
+    cursor: pointer;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.responsive-album {
+    padding: 0 6px;
+    float: left;
+    width: 19%;
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.photo-swipe-gallery {
+    width: 99%;
+    float: left;
+    margin: 10px;
+}
+.photo-swipe-gallery img {
+    width: 100%;
+    height: auto;
+}
+.photo-swipe-gallery figure {
+    display: block;
+    float: left;
+    margin: 0 5px 5px 0;
+    width: 265px;
+}
+.photo-swipe-gallery figcaption {
+    display: none;
+}
+
+@media only screen and (max-width: 500px) {
+    .responsive-album {
+        width: 100%;
+        margin: 6px 0;
+    }
+
+    .album .album-link .title {
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    .photo-swipe-gallery figure {
+        display: block;
+        float: left;
+        margin: 0 5px 5px 0;
+        width: 31%;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px){
+    .responsive-album {
+        width: 24%;
+        margin: 6px 0;
+    }
+
+    .album .album-link .title {
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    .photo-swipe-gallery figure {
+        display: block;
+        float: left;
+        margin: 0px 5px 5px 0px;
+        width: 145px!important;
+    }
+}
+
+@media only screen and (min-width: 1280px) and (max-width: 1439px) {
+    .responsive-album {
+        width: 20%;
+        margin: 6px 0;
+    }
+
+    .photo-swipe-gallery figure {
+        display: block;
+        float: left;
+        margin: 0 5px 8px 0;
+        width: 247px!important;
+    }
+}
+
+@media only screen and (width: 1440px) {
+    .responsive-album {
+        width: 20%;
+        margin: 6px 0;
+    }
+
+    .photo-swipe-gallery figure {
+        display: block;
+        float: left;
+        margin: 0 8px 8px 0;
+        width: 277px!important;
+    }
+}
+
+@media only screen and (width: 1024px) {
+    .responsive-album {
+        width: 20%;
+        margin: 6px 0;
+    }
+
+    .album .album-link .title {
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    .photo-swipe-gallery figure {
+        display: block;
+        float: left;
+        margin: 0px 5px 5px 0px;
+        width: 19%!important;
+    }
+}

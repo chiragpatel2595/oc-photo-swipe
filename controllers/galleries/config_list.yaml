@@ -1,0 +1,13 @@
+list: $/chiragpatel/photoswipe/models/gallery/columns.yaml
+modelClass: ChiragPatel\PhotoSwipe\Models\Gallery
+title: Galleries
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'chiragpatel/photoswipe/galleries/update/:id'
+filter: config_filter.yaml

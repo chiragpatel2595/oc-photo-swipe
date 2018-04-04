@@ -1,0 +1,11 @@
+plugin:
+    name: 'chiragpatel.photoswipe::lang.plugin.name'
+    description: 'chiragpatel.photoswipe::lang.plugin.description'
+    author: 'Chirag Patel'
+    icon: oc-icon-image
+    homepage: ''
+navigation:
+    galleries:
+        label: 'chiragpatel.photoswipe::lang.plugin.name'
+        url: chiragpatel/photoswipe/galleries
+        icon: icon-picture-o

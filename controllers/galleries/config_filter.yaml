@@ -1,0 +1,11 @@
+scopes:
+    published:
+        label: chiragpatel.photoswipe::lang.galleries.is_published
+        type: switch
+        conditions:
+          - is_published <> '1'
+          - is_published = '1'
+    published_date:
+        label: chiragpatel.photoswipe::lang.galleries.date_filter
+        type: daterange
+        conditions: created_at >= ':after' AND created_at <= ':before'

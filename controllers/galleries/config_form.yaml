@@ -1,0 +1,10 @@
+name: Gallery
+form: $/chiragpatel/photoswipe/models/gallery/fields.yaml
+modelClass: ChiragPatel\PhotoSwipe\Models\Gallery
+defaultRedirect: chiragpatel/photoswipe/galleries
+create:
+    redirect: 'chiragpatel/photoswipe/galleries/update/:id'
+    redirectClose: chiragpatel/photoswipe/galleries
+update:
+    redirect: chiragpatel/photoswipe/galleries
+    redirectClose: chiragpatel/photoswipe/galleries
