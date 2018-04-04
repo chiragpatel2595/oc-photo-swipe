@@ -69,7 +69,7 @@ Different components have different properties as per below:
 
     * **Slug**: To show specific gallery, Enter the **slug** of gallery.
     
-    > Note: If you want show gallery with album links, Please do not change it's default value(`:slug`). 
+    > Note: If you want to show gallery with album links, Please do not change it's default value(`:slug`). 
 
     * **Display Properties:** Here you get flexible display properties.  
         
