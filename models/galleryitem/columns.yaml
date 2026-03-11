@@ -1,0 +1,21 @@
+columns:
+    title:
+        label: chiragpatel.photoswipe::lang.gallery_items.title
+        searchable: true
+
+    type:
+        label: chiragpatel.photoswipe::lang.gallery_items.type
+        type: text
+        searchable: true
+
+    width:
+        label: chiragpatel.photoswipe::lang.gallery_items.width
+        type: number
+
+    height:
+        label: chiragpatel.photoswipe::lang.gallery_items.height
+        type: number
+
+    sort_order:
+        label: chiragpatel.photoswipe::lang.gallery_items.sort_order
+        type: number

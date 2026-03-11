@@ -1,0 +1,23 @@
+/* PhotoSwipe Plugin - Masonry Layout (CSS Columns) */
+
+.pswp-gallery--masonry {
+    display: block;
+    columns: 4 200px;
+    column-gap: 8px;
+}
+
+.pswp-gallery--masonry .pswp-gallery__item {
+    break-inside: avoid;
+    margin-bottom: 8px;
+}
+
+@media (max-width: 600px) {
+    .pswp-gallery--masonry {
+        columns: 2 140px;
+        column-gap: 4px;
+    }
+
+    .pswp-gallery--masonry .pswp-gallery__item {
+        margin-bottom: 4px;
+    }
+}

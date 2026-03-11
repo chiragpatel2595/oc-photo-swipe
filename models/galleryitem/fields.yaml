@@ -1,0 +1,60 @@
+fields:
+    type:
+        label: chiragpatel.photoswipe::lang.gallery_items.type
+        type: dropdown
+        span: left
+
+    title:
+        label: chiragpatel.photoswipe::lang.gallery_items.title
+        type: text
+        span: right
+
+    caption:
+        label: chiragpatel.photoswipe::lang.gallery_items.caption
+        type: textarea
+        size: small
+        span: full
+
+    image:
+        label: chiragpatel.photoswipe::lang.gallery_items.image
+        type: fileupload
+        mode: image
+        imageWidth: 250
+        imageHeight: 250
+        thumbOptions:
+            mode: crop
+        span: full
+        trigger:
+            action: show
+            field: type
+            condition: value[image]
+
+    video_url:
+        label: chiragpatel.photoswipe::lang.gallery_items.video_url
+        type: text
+        comment: chiragpatel.photoswipe::lang.gallery_items.video_url_comment
+        span: left
+        trigger:
+            action: show
+            field: type
+            condition: value[video]
+
+    video_thumb_url:
+        label: chiragpatel.photoswipe::lang.gallery_items.video_thumb_url
+        type: text
+        span: right
+        trigger:
+            action: show
+            field: type
+            condition: value[video]
+
+    width:
+        label: chiragpatel.photoswipe::lang.gallery_items.width
+        type: number
+        span: left
+        comment: chiragpatel.photoswipe::lang.gallery_items.dimensions_comment
+
+    height:
+        label: chiragpatel.photoswipe::lang.gallery_items.height
+        type: number
+        span: right

@@ -1,0 +1,58 @@
+{% for item in items %}
+    {% if item.type is defined and item.type == 'video' %}
+        {# GalleryItem: Video #}
+        <figure class="pswp-gallery__item pswp-gallery__item--video">
+            <a href="{{ item.video_thumb_url ?: item.thumbnailUrl(thumbWidth, thumbHeight, thumbMode) }}"
+               data-pswp-width="{{ item.width ?: 1280 }}"
+               data-pswp-height="{{ item.height ?: 720 }}"
+               data-pswp-type="video"
+               data-pswp-video-src="{{ item.videoEmbedUrl }}"
+               target="_blank"
+            >
+                <img src="{{ item.thumbnailUrl(thumbWidth, thumbHeight, thumbMode) }}"
+                     alt="{{ item.title }}"
+                     loading="lazy"
+                />
+            </a>
+            {% if item.caption %}
+                <figcaption>{{ item.caption }}</figcaption>
+            {% endif %}
+        </figure>
+
+    {% elseif item.type is defined and item.type == 'image' %}
+        {# GalleryItem: Image #}
+        <figure class="pswp-gallery__item">
+            <a href="{{ item.image.path }}"
+               data-pswp-width="{{ item.width }}"
+               data-pswp-height="{{ item.height }}"
+               target="_blank"
+            >
+                <img src="{{ item.image.getThumb(thumbWidth, thumbHeight, {mode: thumbMode}) }}"
+                     alt="{{ item.title }}"
+                     loading="lazy"
+                />
+            </a>
+            {% if item.caption %}
+                <figcaption>{{ item.caption }}</figcaption>
+            {% endif %}
+        </figure>
+
+    {% else %}
+        {# Legacy System\Models\File #}
+        <figure class="pswp-gallery__item">
+            <a href="{{ item.path }}"
+               data-pswp-width="{{ attribute(item, 'width') ?: 1200 }}"
+               data-pswp-height="{{ attribute(item, 'height') ?: 800 }}"
+               target="_blank"
+            >
+                <img src="{{ item.getThumb(thumbWidth, thumbHeight, {mode: thumbMode}) }}"
+                     alt="{{ item.title }}"
+                     loading="lazy"
+                />
+            </a>
+            {% if item.description %}
+                <figcaption>{{ item.description }}</figcaption>
+            {% endif %}
+        </figure>
+    {% endif %}
+{% endfor %}

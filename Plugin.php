@@ -8,21 +8,15 @@ class Plugin extends PluginBase
     {
         return [
             'ChiragPatel\PhotoSwipe\Components\Albums' => 'albums',
-            'ChiragPatel\PhotoSwipe\Components\ViewGallery' => 'viewGallery',
-            'ChiragPatel\PhotoSwipe\Components\DirectGallery' => 'directGallery',
+            'ChiragPatel\PhotoSwipe\Components\Gallery' => 'gallery',
         ];
-    }
-
-    public function registerSettings()
-    {
     }
 
     public function registerPageSnippets()
     {
         return [
             'ChiragPatel\PhotoSwipe\Components\Albums' => 'albums',
-            'ChiragPatel\PhotoSwipe\Components\ViewGallery' => 'viewGallery',
-            'ChiragPatel\PhotoSwipe\Components\DirectGallery' => 'directGallery',
+            'ChiragPatel\PhotoSwipe\Components\Gallery' => 'gallery',
         ];
     }
 }

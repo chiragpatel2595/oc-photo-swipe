@@ -1,0 +1,51 @@
+/* PhotoSwipe Plugin - Slider Layout (Horizontal Scroll-Snap) */
+
+.pswp-gallery--slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 8px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+}
+
+.pswp-gallery--slider .pswp-gallery__item {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    width: 300px;
+}
+
+.pswp-gallery--slider .pswp-gallery__item img {
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Hide scrollbar on webkit browsers */
+.pswp-gallery--slider::-webkit-scrollbar {
+    height: 6px;
+}
+
+.pswp-gallery--slider::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.pswp-gallery--slider::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 3px;
+}
+
+.pswp-gallery--slider::-webkit-scrollbar-thumb:hover {
+    background: #aaa;
+}
+
+@media (max-width: 600px) {
+    .pswp-gallery--slider .pswp-gallery__item {
+        width: 240px;
+    }
+
+    .pswp-gallery--slider .pswp-gallery__item img {
+        height: 180px;
+    }
+}

@@ -1,0 +1,15 @@
+# IDE
+.idea/
+
+# AI tools
+CLAUDE.md
+.claude/
+v2-revamp-plan.md
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Dependencies
+/vendor/
+node_modules/

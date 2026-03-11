@@ -3,3 +3,8 @@
 1.0.2:
     - 'Created table chiragpatel_photoswipe_galleries'
     - builder_table_create_chiragpatel_photoswipe_galleries.php
+2.0.0:
+    - 'v2.0 revamp: PhotoSwipe v5, unified Gallery component, layouts, video support, performance improvements.'
+    - v2_0_0_add_gallery_fields.php
+    - v2_0_0_create_gallery_items.php
+    - v2_0_0_migrate_existing_images.php

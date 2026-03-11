@@ -1,16 +1,20 @@
-<div id="photo-swipe-album" class="photo-swipe-album">
+<div class="pswp-albums">
     {% for album in albums %}
-    <div class="responsive-album">
-        <div class="album">
-            <a href="{{ album.url}}" class="album-link">
+        <div class="pswp-album">
+            <a href="{{ album.url }}" class="pswp-album__link">
                 {% if album.cover %}
-                <img src="{{ album.cover.getThumb(400,250,'crop') }}" alt="Album Image" height="100">
-                {% else %}
-                <img src="{{ album.images[0].getThumb(400,250,'crop') }}" alt="Album Image" height="100">
+                    <img src="{{ album.cover.getThumb(400, 250, {mode: 'crop'}) }}"
+                         alt="{{ album.title }}"
+                         loading="lazy"
+                    />
+                {% elseif album.images.count %}
+                    <img src="{{ album.images.first.getThumb(400, 250, {mode: 'crop'}) }}"
+                         alt="{{ album.title }}"
+                         loading="lazy"
+                    />
                 {% endif %}
-                <div class="title">{{ album.title }}</div>
+                <div class="pswp-album__title">{{ album.title }}</div>
             </a>
         </div>
-    </div>
     {% endfor %}
 </div>

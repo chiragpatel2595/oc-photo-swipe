@@ -14,8 +14,8 @@ class Albums extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name'        => 'chiragpatel.photoswipe::lang.components.albums.title',
-            'description' => 'chiragpatel.photoswipe::lang.components.albums.description'
+            'name' => 'chiragpatel.photoswipe::lang.components.albums.title',
+            'description' => 'chiragpatel.photoswipe::lang.components.albums.description',
         ];
     }
 
@@ -24,7 +24,7 @@ class Albums extends ComponentBase
         return [
             'sortBy' => [
                 'title' => 'chiragpatel.photoswipe::lang.components.albums.properties.sortBy.title',
-                'description' => 'Name of Gallery page file for the link on Album page.',
+                'description' => 'chiragpatel.photoswipe::lang.components.albums.properties.sortBy.description',
                 'type' => 'dropdown',
                 'default' => 'title-asc',
                 'showExternalParam' => false,
@@ -35,14 +35,14 @@ class Albums extends ComponentBase
                     'updated_at-desc' => 'chiragpatel.photoswipe::lang.components.albums.properties.sortBy.options.updated_at-desc',
                     'published_at-asc' => 'chiragpatel.photoswipe::lang.components.albums.properties.sortBy.options.published_at-asc',
                     'published_at-desc' => 'chiragpatel.photoswipe::lang.components.albums.properties.sortBy.options.published_at-desc',
-                ]
+                ],
             ],
             'galleryPage' => [
                 'title' => 'chiragpatel.photoswipe::lang.components.albums.properties.galleryPage',
-                'description' => 'Name of Gallery page file for the link on Album page.',
+                'description' => 'chiragpatel.photoswipe::lang.components.albums.properties.galleryPage.description',
                 'type' => 'dropdown',
                 'default' => 'album/gallery',
-                'group' => 'chiragpatel.photoswipe::lang.components.albums.properties.links'
+                'group' => 'chiragpatel.photoswipe::lang.components.albums.properties.links',
             ],
         ];
     }
@@ -54,54 +54,36 @@ class Albums extends ComponentBase
 
     public function init()
     {
-        if (!empty($this->property('sortBy'))) {
+        if ($this->property('sortBy')) {
             $sorting = explode('-', $this->property('sortBy'));
             $this->sortBy = $sorting[0];
             $this->sortType = $sorting[1];
         }
     }
+
     public function onRun()
     {
-        $this->prepareVars();
+        $base = '/plugins/chiragpatel/photoswipe/assets';
+        $this->addCss($base . '/css/gallery.css');
 
-        $this->addCss('/plugins/chiragpatel/photoswipe/assets/resources/custom.css');
-
-        $this->albums = $this->page['albums'] = $this->loadAlbums();
-    }
-
-    protected function prepareVars()
-    {
-        /*
-         * Page links
-         */
         $this->galleryPage = $this->page['galleryPage'] = $this->property('galleryPage');
+        $this->albums = $this->page['albums'] = $this->loadAlbums();
     }
 
     public function loadAlbums()
     {
-        $albums = Gallery::where('is_published',true)->orderBy($this->sortBy, $this->sortType)->get();
+        $albums = Gallery::published()
+            ->with(['cover', 'images'])
+            ->orderBy($this->sortBy, $this->sortType)
+            ->get();
 
-        $albums->each(function($album) {
-            $album->url = $this->setUrl($album, $this->galleryPage, $this->controller);
+        $albums->each(function ($album) {
+            $album->url = $this->controller->pageUrl($this->galleryPage, [
+                'id' => $album->id,
+                'slug' => $album->slug,
+            ]);
         });
 
         return $albums;
-    }
-
-    public function setUrl($gallery, $pageName, $controller)
-    {
-        $params = [
-            'id'   => $gallery->id,
-            'slug' => $gallery->slug,
-        ];
-
-        //expose published year, month and day as URL parameters
-        /*if ($this->published) {
-            $params['year'] = $this->published_at->format('Y');
-            $params['month'] = $this->published_at->format('m');
-            $params['day'] = $this->published_at->format('d');
-        }*/
-
-        return $controller->pageUrl($pageName, $params);
     }
 }

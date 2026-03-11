@@ -1,0 +1,23 @@
+{% if notFound %}
+    <p>{{ 'chiragpatel.photoswipe::lang.components.gallery.not_found' | trans }}</p>
+{% else %}
+    {% set layoutClass = layout != 'grid' ? 'pswp-gallery--' ~ layout : '' %}
+
+    <div class="pswp-gallery {{ layoutClass }}"
+         data-pswp-gallery
+         data-pswp-options="{{ pswpOptions }}"
+         {% if useInfiniteScroll %}
+             data-pswp-infinite
+             data-pswp-has-more="{{ hasMore ? 'true' : 'false' }}"
+             data-pswp-handler="onLoadMore"
+         {% endif %}
+    >
+        {% partial __SELF__ ~ '::items' %}
+
+        {% if useInfiniteScroll and hasMore %}
+            <div class="pswp-gallery__sentinel">
+                <div class="pswp-gallery__loading"></div>
+            </div>
+        {% endif %}
+    </div>
+{% endif %}

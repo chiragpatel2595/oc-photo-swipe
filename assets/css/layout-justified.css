@@ -1,0 +1,35 @@
+/* PhotoSwipe Plugin - Justified Layout (Flexbox Rows) */
+
+.pswp-gallery--justified {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.pswp-gallery--justified .pswp-gallery__item {
+    flex-grow: 1;
+    height: 200px;
+}
+
+.pswp-gallery--justified .pswp-gallery__item a {
+    height: 100%;
+}
+
+.pswp-gallery--justified .pswp-gallery__item img {
+    height: 100%;
+    width: auto;
+    min-width: 100%;
+    object-fit: cover;
+}
+
+/* Prevent last row from stretching too wide */
+.pswp-gallery--justified::after {
+    content: '';
+    flex-grow: 999;
+}
+
+@media (max-width: 600px) {
+    .pswp-gallery--justified .pswp-gallery__item {
+        height: 120px;
+    }
+}

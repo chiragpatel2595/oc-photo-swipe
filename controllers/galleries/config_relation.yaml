@@ -1,0 +1,18 @@
+items:
+    label: chiragpatel.photoswipe::lang.gallery_items.title
+    view:
+        list:
+            columns:
+                title:
+                    label: chiragpatel.photoswipe::lang.gallery_items.title
+                    searchable: true
+                type:
+                    label: chiragpatel.photoswipe::lang.gallery_items.type
+                sort_order:
+                    label: chiragpatel.photoswipe::lang.gallery_items.sort_order
+                    type: number
+        toolbarButtons: create|delete
+    manage:
+        form: $/chiragpatel/photoswipe/models/galleryitem/fields.yaml
+    pivot:
+        form: false
