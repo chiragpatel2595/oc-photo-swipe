@@ -8,3 +8,5 @@
     - v2_0_0_add_gallery_fields.php
     - v2_0_0_create_gallery_items.php
     - v2_0_0_migrate_existing_images.php
+3.0.0:
+    - 'OctoberCMS v4 compatibility (Laravel 12, PHP 8.2+).'
